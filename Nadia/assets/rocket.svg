@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="200px" viewBox="0 0 100 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Rocket</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="rocketGradient">
+            <stop stop-color="#FF6B8B" offset="0%"></stop>
+            <stop stop-color="#FFD93D" offset="100%"></stop>
+        </linearGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="5" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- Rocket body -->
+        <path d="M50,10 C70,30 80,80 80,150 L60,170 L60,180 L40,180 L40,170 L20,150 C20,80 30,30 50,10 Z" fill="url(#rocketGradient)" filter="url(#glow)"></path>
+        
+        <!-- Window -->
+        <circle cx="50" cy="70" r="15" fill="#D1F1FF" stroke="#FFFFFF" stroke-width="2"></circle>
+        
+        <!-- Fins -->
+        <path d="M20,150 L5,170 L20,160 Z" fill="#FF4757"></path>
+        <path d="M80,150 L95,170 L80,160 Z" fill="#FF4757"></path>
+        
+        <!-- Flames -->
+        <path d="M40,180 C40,200 50,200 60,180 Z" fill="#FF851B"></path>
+        <path d="M45,180 C45,190 55,190 55,180 Z" fill="#FFDC00"></path>
+    </g>
+</svg>

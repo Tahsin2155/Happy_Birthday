@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Celebration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- CDN libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <!-- Particle background -->
+    <div id="particles-js" class="starfield"></div>
+    
+    <!-- Audio controls -->
+    <div class="audio-control">
+        <button id="audioToggle" class="glowing-btn">
+            <span>🔊</span>
+        </button>
+    </div>
+
+    <!-- Background music -->
+    <audio id="bgMusic" loop>
+        <source src="assets/128-Tum Tak - Raanjhanaa 128 Kbps.mp3" type="audio/mp3">
+    </audio>
+
+    <main class="container">
+        <!-- Countdown section -->
+        <div class="countdown" id="countdown">
+            <h2>Countdown to Your Special Day</h2>
+            <div class="timer">
+                <span id="days">00</span>d
+                <span id="hours">00</span>h
+                <span id="minutes">00</span>m
+                <span id="seconds">00</span>s
+            </div>
+        </div>
+
+        <!-- Birthday celebration content (hidden initially) -->
+        <div class="birthday-content hidden" id="birthdayContent">
+            <div class="rocket">
+                <img src="assets/rocket.svg" alt="Rocket">
+            </div>
+            
+            <div class="message-container">
+                <h1 class="typing-text"></h1>
+                <p class="subtitle">May your day be filled with joy, laughter, and wonderful memories! ✨💖</p>
+            </div>
+
+            <!-- Content grid for organization -->
+            <div class="content-grid">
+                <!-- Wish section -->
+                <div class="grid-item wish-section">
+                    <h3>Make a Birthday Wish</h3>
+                    <div class="input-wrapper">
+                        <input type="text" id="wishInput" placeholder="Make a wish...">
+                        <button id="makeWish" class="gradient-btn">Send to the Stars 🌠</button>
+                    </div>
+                </div>
+                
+                <!-- Memory section -->
+                <div class="grid-item memory-section">
+                    <h3>Special Memories</h3>
+                    <div class="memory-orbit">
+                        <div class="planet-frame">
+                            <div class="photo-placeholder">
+                                <img src="assets/Nadia.jpg" alt="Nadia">
+                            </div>
+                        </div>
+                        <div class="memory-bubbles"></div>
+                    </div>
+                </div>
+                
+                <!-- Birthday game section -->
+                <div class="grid-item game-section">
+                    <h3>Birthday Challenge</h3>
+                    <button id="startGame" class="play-btn">Play 'Cosmic Birthday Collector' 🚀</button>
+                    <div id="gameArea" class="hidden"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
