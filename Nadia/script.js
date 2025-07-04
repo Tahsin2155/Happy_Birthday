@@ -177,7 +177,7 @@ function initCountdown() {
     // const birthdayDate = new Date('YYYY-MM-DDT00:00:00').getTime();
     
     // For demo purposes, let's set a short countdown (10 seconds from now)
-    const birthdayDate = new Date("2025-07-05T00:10:00");
+    const birthdayDate = new Date("2025-07-05T00:00:00");
     birthdayDate.setSeconds(birthdayDate.getSeconds());
     
     function updateCountdown() {
