@@ -93,7 +93,7 @@ class AudioController {
         this.toggleButton = document.getElementById('audioToggle');
         // Set default volume to 30%
         if (this.audioElement) {
-            this.audioElement.volume = 0.1;
+            this.audioElement.volume = 0.4;
         }
     }
 
