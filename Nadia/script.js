@@ -218,7 +218,7 @@ function typeMessage() {
     const typingText = document.querySelector('.typing-text');
     if (!typingText) return;
     
-    const text = "Happy Birthday! 🎂✨";
+    const text = "Happy Birthday! Nadia ❤️🎂✨";
     let index = 0;
 
     typingText.textContent = ''; // Clear any existing text
