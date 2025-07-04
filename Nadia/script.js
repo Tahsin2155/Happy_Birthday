@@ -179,10 +179,27 @@ function initCountdown() {
     // For demo purposes, let's set a short countdown (10 seconds from now)
     const birthdayDate = new Date("2025-07-05T00:00:00");
     birthdayDate.setSeconds(birthdayDate.getSeconds());
-    
+
+    function switchToCelebration() {
+        if (countdown && birthdayContent) {
+            countdown.style.display = 'none';
+            birthdayContent.classList.remove('hidden');
+            setTimeout(() => birthdayContent.classList.add('visible'), 100);
+            startBirthdayCelebration();
+        }
+    }
+
+
     function updateCountdown() {
         const now = new Date().getTime();
         const distance = birthdayDate.getTime() - now;
+
+        // If the countdown is over, show birthday content
+        if (distance < 0) {
+            clearInterval(countdownInterval);
+            switchToCelebration();
+            return;
+        }
 
         // Calculate time components
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -196,16 +213,12 @@ function initCountdown() {
         document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
         document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
 
-        // If the countdown is over, show birthday content
-        if (distance < 0) {
-            clearInterval(countdownInterval);
-            if (countdown && birthdayContent) {
-                countdown.style.display = 'none';
-                birthdayContent.classList.remove('hidden');
-                setTimeout(() => birthdayContent.classList.add('visible'), 100);
-                startBirthdayCelebration();
-            }
-        }
+    }
+
+    // If already past, switch immediately
+    if (new Date().getTime() > birthdayDate.getTime()) {
+        switchToCelebration();
+        return;
     }
 
     // Update the countdown every second
